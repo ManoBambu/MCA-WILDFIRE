@@ -20,7 +20,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wildfire-mca-integration
           path: build/libs/*.jar
