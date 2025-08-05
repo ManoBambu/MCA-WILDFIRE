@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "wildfiremca",
+  "version": "1.0.0",
+  "name": "Wildfire + MCA Integration",
+  "description": "Makes Wildfire female breasts render on MCA female villagers and zombie villagers.",
+  "authors": ["ManobambuIntegration"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["com.manobambu.wildfire_mca.WildfireMCAIntegrationMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.20.1",
+    "wildfire-female-gender": "*",
+    "comes-alive-reborn": "*"
+  },
+  "mixins": ["mixin.wildfiremca.json"]
+}

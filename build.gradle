@@ -1,0 +1,42 @@
+plugins {
+    id 'fabric-loom' version '1.2.8'
+    id 'maven-publish'
+}
+
+group = 'com.manobambu'
+version = '1.0.0'
+archivesBaseName = 'wildfire-mca-integration'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://api.modrinth.com/maven' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings  'net.fabricmc:yarn:1.20.1+build.10:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.14.8'
+    modImplementation 'io.wispforest:wildfire-female-gender:3.0.1'
+    modImplementation 'com.github.holloweada:comes-alive-reborn:7.6.11'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+sourceSets.main {
+    resources.srcDir 'src/main/resources'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url = uri('file://' + projectDir + '/repo')
+        }
+    }
+}
